@@ -1,0 +1,30 @@
+<div class="jumbo">
+    <h2>Welcome to Rescape!</h2>
+    <p>
+        Let's talk urbanism
+    </p>
+  {{#link-to 'about' class="button"}}
+      About
+  {{/link-to}}
+  {{#link-to 'contact' class="button"}}
+      Contact
+  {{/link-to}}
+</div>
+
+{{#each state.documents.entries as |document|}}
+    <document class="listing">
+        <h3>{{document.title}}</h3>
+        <div class="detail author">
+            <span>By:</span> {{document.author}}
+        </div>
+        <div class="detail date">
+            <span>Date:</span> {{document.date}}
+        </div>
+        <div class="detail location">
+            <span>Location:</span> {{document.location}}
+        </div>
+        <div class="detail document">
+            <span>Number of bedrooms:</span> {{document.text}}
+        </div>
+    </document>
+{{/each}}
