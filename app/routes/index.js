@@ -79,6 +79,6 @@ let state = {
 };
 export default Ember.Route.extend({
   model() {
-    return state;
+    return this.get('store').findAll('document');
   }
 });
