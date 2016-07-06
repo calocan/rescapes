@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+
   actions: {
     /***
      * When the scroll position of the document updates, we change the model and scene if

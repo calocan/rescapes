@@ -27,14 +27,15 @@ const DOCUMENT_CONTENT = `<body class="c7">
     <span class="c2">&nbsp;is gliding smoothly and nearly silently down a railroad free of cross-traffic and ugly billboards and strip malls, you have the option of getting up at anytime and walking to the relief of a large bathroom or to a staffed caf&eacute; car for a coffee, beer, or snack. Such possibilities don&rsquo;t exist in a car, bus, or plane, and they aren&rsquo;t offered on other forms of urban railroads, namely metro (subway) or lightrail, or streetcar.</span>
   </p>
 </body>
-`
+`;
 
 test('Should load document and render', function(assert) {
   // Return a promise to load the document content
-  this.on('loadDocument', (val) => {
+  // TODO how do I trigger this 
+  this.on('loadDocument', (documentId) => {
       return Ember.RSVP.resolve(DOCUMENT_CONTENT);
     }
-  });
+  );
 
   let stubDocument = Ember.Object.create({
     id: '1GbrsFkL4hlMP9o-J1JLw4Qu08j6hEPde_ElJdanJX5U',
@@ -48,12 +49,10 @@ test('Should load document and render', function(assert) {
     title: 'The AMTRAK Standard',
     modelKeys: ['AMTRAK Superliner', 'AMTRAK Café Car']
   });
+  
   this.set('documentObj', stubDocument);
   this.render(hbs`{{document-listing document=documentObj}}`);
 
-  // TODO I want to test here that the document loads by checking the status
-  // TODO I want to test that the text shows
-  // TODO I want to test that scrolling triggers and action
 
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
@@ -63,6 +62,12 @@ test('Should load document and render', function(assert) {
   this.render(hbs`{{document-listing document=documentObj}}`);
 
   return wait().then(() => {
+    // Test that the document loaded by checking the status
+    assert.equal(stubDocument.get('status'), Statuses.READY)
+    // Test that the document contains the content
+    assert.equal(this.$().text().trim(), DOCUMENT_CONTENT);
+    // Test that the div contains the content
     assert.equal(this.$().text().trim(), DOCUMENT_CONTENT);
   });
 });
+// TODO I want to test that scrolling triggers and action
