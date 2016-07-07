@@ -8,7 +8,7 @@ import { hasMany } from 'ember-data/relationships';
  */
 export default Model.extend({
   // The id to fetch the document from Google Drive or similar
-  id: attr(),
+  documentId: attr(),
   // The consistent underscore separated name of the document used for the article url
   key: attr(),
   // The content of the document. This will be raw HTML once loaded

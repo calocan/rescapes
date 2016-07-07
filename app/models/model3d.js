@@ -4,7 +4,7 @@ import { hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
   // The id of the 3D used to fetch from the Sketch 3D Warehouse or similar
-  id: attr(),
+  model3dId: attr(),
   // The consistent underscore-separated name of the 3D Model
   key: attr(),
   // The anchor defined in the document that corresponds to the model.

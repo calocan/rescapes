@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
      * @param state
     */
     setState(state) {
-      
+      state=state;
     },
 
     /***
@@ -15,21 +15,19 @@ export default Ember.Controller.extend({
      * @param key
      */
     register(key) {
-      
+      key=key;
     },
-    
+
     /***
-     * 
+     *
      * @param model
      * @param scene
      * @returns {*}
     */
     closestModelAndSceneDidChange(model, scene) {
-      if (param !== '') {
-        return this.get('store').query('rental', { city: param });
-      } else {
-        return this.get('store').findAll('rental');
-      }
+      model=model;
+      scene=scene;
+      
     }
   }
 });

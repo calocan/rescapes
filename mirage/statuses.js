@@ -22,4 +22,4 @@ export default  {
     READY: 0x02000,
     // Error loading
     ERROR: 0x1000
-}
+};
