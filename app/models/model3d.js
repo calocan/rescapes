@@ -1,7 +1,6 @@
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
 import { hasMany } from 'ember-data/relationships';
-import Scene from './scene';
 
 export default Model.extend({
   // The id of the 3D used to fetch from the Sketch 3D Warehouse or similar
@@ -15,5 +14,5 @@ export default Model.extend({
   // The load status of the 3D Model
   status: attr(),
   // The scenes of the 3D Model
-  scenes: hasMany(Scene)
+  scenes: hasMany('scenes')
 });

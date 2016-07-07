@@ -11,11 +11,13 @@ Router.map(function() {
   this.route('documents', function() {
     this.route('show', {
       path: ':document_id'
+    }, function() {
+      this.route('model3ds', {resetNamespace: true});
     });
   });
-  this.route('models', function() {
+  this.route('articles', function() {
     this.route('show', {
-      path: ':model_id'
+      path: ':document_id'
     });
   });
 });

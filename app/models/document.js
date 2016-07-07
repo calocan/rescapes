@@ -2,8 +2,6 @@ import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
 import { hasMany } from 'ember-data/relationships';
 
-import Model3d from './model3d';
-
 /***
  * Represents a Document stored on Google Drive or similar that has references to 3D models
  * stored in the Sketchup 3d Warehouse or similar.
@@ -26,7 +24,7 @@ export default Model.extend({
   // The title of the document
   title: attr(),
   // The 3d Models of the document
-  models: hasMany(Model3d),
+  model3ds: hasMany('model3ds'),
 
   /***
    * Method to generate the URL of the document. Currently hardcoded to Google Docs

@@ -7,7 +7,7 @@ import attr from 'ember-data/attr';
  * A scene corresponds with a scene in a 3D Model in Sketchup
  */
 export default Model.extend({
-  // The consistant underscore separated name of the scene
+  // The consistent underscore separated name of the scene
   key: attr(),
   // The anchor defined in the document that corresponds to the scene.
   // When the user is closest in text position to this anchor, the scene shows
